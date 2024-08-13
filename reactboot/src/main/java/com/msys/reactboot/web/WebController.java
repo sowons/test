@@ -7,10 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WebController {
 
-    private final ErrorAttributes errorAttributes;
-
     public WebController(ErrorAttributes errorAttributes) {
-        this.errorAttributes = errorAttributes;
     }
 
     @RequestMapping("/error")

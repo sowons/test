@@ -13,7 +13,7 @@ const PostList = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/posts?page=${page}&size=${size}`);
+        const response = await axios.get(`http://localhost:8080/list/posts?page=${page}&size=${size}`);
         setPosts(response.data);
       } catch (err) {
         setError(err.message);
