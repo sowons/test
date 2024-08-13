@@ -1,5 +1,5 @@
-import React, { Component } from "react";
 import axios from "axios";
+import React, { Component } from "react";
 
 class ApiComponent extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class ApiComponent extends Component {
     }
 
     getApi = () => {
-        axios.get("http://localhost:8080/api/hello")
+        axios.get("http://localhost:8080/list/posts")
             .then(res => {
                 console.log(res);
                 this.setState({

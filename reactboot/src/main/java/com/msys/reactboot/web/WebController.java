@@ -1,23 +1,21 @@
 package com.msys.reactboot.web;
 
-import org.springframework.boot.web.servlet.error.ErrorController;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.boot.web.servlet.error.ErrorAttributes;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-/**
- * WebController
- */
-@Controller
-public class WebController implements ErrorController {
+@RestController
+public class WebController {
 
-    @GetMapping(value = { "", "/error" })
-    public String index() {
-        return "index.html";
+    private final ErrorAttributes errorAttributes;
+
+    public WebController(ErrorAttributes errorAttributes) {
+        this.errorAttributes = errorAttributes;
     }
 
-    @Override
-    public String getErrorPath() {
-        return "/error";
+    @RequestMapping("/error")
+    public String handleError() {
+        // 오류 처리 로직
+        return "Error occurred"; // 예시 반환값
     }
-
 }
