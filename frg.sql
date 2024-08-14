@@ -149,3 +149,9 @@ CONSTRAINT fk_warning_tbl_post
 ALTER TABLE user_table RENAME TO usertbl;
 ALTER TABLE order_table RENAME TO ordertbl;
 ALTER TABLE warning_tbl RENAME TO warningtbl;
+
+
+ALTER TABLE post DROP FOREIGN KEY post_ibfk_1;
+ALTER TABLE post MODIFY COLUMN id VARCHAR(255) NOT NULL;
+ALTER TABLE post ADD CONSTRAINT post_ibfk_1 FOREIGN KEY (id) REFERENCES usertbl(id);
+
